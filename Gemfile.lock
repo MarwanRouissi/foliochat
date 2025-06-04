@@ -162,9 +162,6 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.13.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.12.2)
     json-schema (5.1.1)
       addressable (~> 2.8)
@@ -408,7 +405,6 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   importmap-rails
-  jbuilder
   langchainrb (~> 0.19.4)
   mistral-ai
   pg (~> 1.1)
@@ -426,6 +422,9 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+
+RUBY VERSION
+   ruby 3.3.5p100
 
 BUNDLED WITH
    2.6.5
