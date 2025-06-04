@@ -1,0 +1,42 @@
+.form-control {
+  color: $dark-black;
+  background-color: $light-gray;
+
+  &:focus {
+    background-color: $light-gray;
+    color: $dark-black;
+    box-shadow: 0 0 0.2rem $dark-gray;
+    border-color: $light-gray;
+  }
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+    background-color: $dark-gray;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+
+  button {
+    background-color: $dark-gray;
+    color: $white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($dark-gray, 10%);
+    }
+  }
+}

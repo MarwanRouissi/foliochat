@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="background">
+  <span>Developer</span>
+  <span>Designer</span>
+  <span>Thinker</span>
+  <span>Dreamer</span>
+  <span>Passionate</span>
+  <span>Problem Solver</span>
+  <span>Team Player</span>
+  <span>Tech Enthusiast</span>
+</div>
+
+<div class="container-center" id="home-block">
+  <h1>Hello, I'm Marwan!</h1>
+  <p>I'm a passionate developer and designer.</p>
+  <div class="grid-links">
+    <%= link_to "View Projects", projects_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "Discover Folio", messages_path, class: "btn btn-outline-secondary" %>
+  </div>
+</div>
