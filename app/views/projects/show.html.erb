@@ -2,11 +2,31 @@
   <h1><%= @project.name %></h1>
   <div class="project-details">
     <p><%= @project.description %></p>
-    <div class="project-images">
-      <% 4.times do |i| %>
-        <%= image_tag "#{@project.name}_#{i + 1}.jpg", class: "project-image" %>
-      <% end %>
+
+    <!-- Carrousel Bootstrap -->
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <% 4.times do |i| %>
+          <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="<%= i %>" <%= 'class=active' if i == 0 %> aria-current="<%= i == 0 ? 'true' : 'false' %>" aria-label="Slide <%= i + 1 %>"></button>
+        <% end %>
+      </div>
+      <div class="carousel-inner">
+        <% 4.times do |i| %>
+          <div class="carousel-item <%= 'active' if i == 0 %>">
+            <%= image_tag "#{@project.name}_#{i + 1}.jpg", class: "d-block w-100", alt: "Slide #{i + 1}" %>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
     <% @project.technologies.each do |techno| %>
       <%= image_tag Project.get_stack_icon(techno), class: "stack-icon" %>
     <% end %>
@@ -30,7 +50,6 @@
         <li><%= improvement %></li>
       <% end %>
     </ul>
-
   </div>
   <div class="project-links">
     <%= link_to projects_path, class: "btn btn-outline-secondary btn-circle" do %>
@@ -41,4 +60,5 @@
   <div class="project-footer">
     <p>Created by 404 Fighters</p>
     <p>© 2025 All rights reserved</p>
+  </div>
 </div>
