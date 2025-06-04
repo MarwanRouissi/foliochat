@@ -1,0 +1,139 @@
+.chatbot {
+  background: $light-black;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  height: 85%;
+  font-family: monospace;
+
+  .chatbot-header {
+    padding: 1rem;
+    color: $white;
+    border-bottom: 1px solid $dark-gray;
+    font-family: cursive;
+  }
+
+  #messages {
+    height: 65%;
+    padding: 1rem;
+  }
+
+  .messages-scroll {
+    overflow-y: auto;
+    scrollbar-color: $dark-black $dark-gray;
+    scrollbar-width: thin;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-question, .ai-answer {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    max-width: 70%;
+    width: fit-content;
+    word-wrap: break-word;
+  }
+
+  .user-question {
+    align-self: flex-start;
+    background: $dark-black;
+    color: $light-gray;
+  }
+
+  .ai-answer {
+    align-self: flex-end;
+    background: $gray-200;
+    color: $dark-black;
+  }
+
+  .new_message {
+    border-top: 1px solid $dark-gray;
+    padding: 2rem;
+    height: 10%;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .btn {
+    background: $dark-black;
+    color: $white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($dark-gray, 10%);
+    }
+  }
+}
+
+.form-floating {
+  display: flex;
+  background-color: $light-gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.steps {
+  ul {
+    text-align: start;
+  }
+}
+
+.container-center {
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  padding: 3rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+.content {
+  overflow: auto;
+}
+
+// Scroll enabled for mobile devices
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .container-center {
+    max-height: 400px;
+    padding: 1rem;
+  }
+
+  .content {
+    overflow: auto;
+  }
+
+  .links {
+    border-top: 1px solid $dark-gray;
+    padding: 2rem;
+    position: sticky;
+    bottom: 0px;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+  }
+}
