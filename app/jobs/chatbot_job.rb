@@ -7,7 +7,7 @@ class ChatbotJob < ApplicationJob
 
     ai_answer = ""
 
-    mistral_response.chat_completion.split(" ", 10).each do |chunk|
+    mistral_response.chat_completion.split(" ", 5).each do |chunk|
       ai_answer += "#{chunk} "
       sleep(0.1)
 
