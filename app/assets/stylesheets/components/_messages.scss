@@ -12,6 +12,9 @@
   font-family: monospace;
 
   .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     color: $white;
     border-bottom: 1px solid $dark-gray;

@@ -15,6 +15,11 @@ class MessagesController < ApplicationController
     end
   end
 
+  def clear
+    Message.delete_all # Cela supprimera tous les messages de la base de données
+    redirect_to messages_path, notice: 'Chat has been cleared.'
+  end
+
   private
 
   def set_messages

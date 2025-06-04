@@ -1,9 +1,14 @@
 <div class="container chatbot">
   <div class="chatbot-header">
-    <h1>Chat with Folio</h1>
-    <i class="fa-solid fa-quote-left"></i>
-      Ask me anything about Marwan.
-    <i class="fa-solid fa-quote-right"></i>
+    <div>
+      <h1>Chat with Folio</h1>
+      <i class="fa-solid fa-quote-left"></i>
+        Ask me anything about Marwan.
+      <i class="fa-solid fa-quote-right"></i>
+    </div>
+    <div>
+      <%= link_to "New Chat", clear_messages_path, id: "new-chat", class: "btn btn-outline-secondary", data: { "turbo-method": :delete } %>
+    </div>
   </div>
   <div id="messages" class="messages-scroll">
     <%= render @messages %>
