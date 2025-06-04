@@ -1,0 +1,13 @@
+<div class="container chatbot">
+  <div class="chatbot-header">
+    <h1>Chat with Folio</h1>
+    <i class="fa-solid fa-quote-left"></i>
+      Ask me anything about Marwan.
+    <i class="fa-solid fa-quote-right"></i>
+  </div>
+  <div id="messages" class="messages-scroll">
+    <%= render @messages %>
+  </div>
+
+  <%= render "form", message: @message %>
+</div>
